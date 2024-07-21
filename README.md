@@ -1,6 +1,11 @@
 # Projeto de Detecção de Imagens Reais e Falsas com FFT e ResNet
 
-Este projeto demonstra como detectar imagens falsas usando a Transformada Rápida de Fourier (FFT) e um modelo de deep learning (ResNet). O pipeline inclui a preparação dos dados, treinamento do modelo e a implementação de uma API com FastAPI para fazer previsões.
+Este projeto visa detectar imagens falsas utilizando a Transformada Rápida de Fourier (FFT) e um modelo de deep learning (ResNet). O pipeline do projeto inclui a preparação dos dados, treinamento do modelo e a implementação de uma API com FastAPI para fazer previsões.
+
+A detecção de imagens falsas é baseada na análise do espectro de frequência das imagens. Imagens que apresentam mais interferências no espectro são candidatas a serem fotos de fotos, terem sofrido alguma alteração, ou seja, são imagens não originais. Essas características são detectadas pelo modelo ResNet18 treinado com espectros de magnitude das imagens.
+
+O projeto tem valor educativo e permite explorar muitos outros cenários que podem ser testados. Também é importante ressaltar que ele não é à prova de erros ou falhas e pode apresentar classificações incorretas dependendo do dataset e da complexidade dos espectros.
+
 
 ## Estrutura do Projeto
 
@@ -22,7 +27,7 @@ Este projeto demonstra como detectar imagens falsas usando a Transformada Rápid
 - **Imagem Falsa**:
 
   <img src="./docs/fake.png" alt="Espectro de Imagem Falsa" width="400"/>
-  
+
 ## Pré-requisitos
 
 - Python 3.11
@@ -159,14 +164,20 @@ Este projeto demonstra como detectar imagens falsas usando a Transformada Rápid
       -F 'file=@path/to/your/image.jpg'
     ```
 
+
+
+
+## Referências
+
+- [So Fast You'll Freak - Hacker Factor Blog](https://www.hackerfactor.com/blog/index.php?/archives/451-So-Fast-Youll-Freak.html)
+- [IEEE Xplore Document 8776709](https://ieeexplore.ieee.org/document/8776709)
+- [Detection of Digital Image Forgery Using FFT](https://www.smec.ac.in/assets/images/research/ece/21-22/26.Detection%20of%20Digital%20Image%20Forgery%20Using%20FFT.pdf)
+- [FotoForensics Tutorial](https://fotoforensics.com/tutorial.php)
+
+
+
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
-
-## Licença
-
-Este projeto está licenciado sob a [sua licença].
-
----
 
 Sinta-se à vontade para ajustar e expandir conforme necessário. Se houver algo mais que você gostaria de adicionar ou modificar, avise-me!
