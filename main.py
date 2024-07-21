@@ -14,26 +14,23 @@ import os
 
 app = FastAPI()
 
-# Adicionando middleware de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Permitir todas as origens. Altere para um domínio específico se necessário.
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],  # Permitir todos os métodos HTTP
-    allow_headers=["*"],  # Permitir todos os cabeçalhos HTTP
+    allow_methods=["*"],
+    allow_headers=["*"], 
 )
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 class_names = ['fake', 'real']
 
-# Verificar se o NumPy está disponível
 try:
     print("NumPy version:", np.__version__)
 except Exception as e:
     print("NumPy is not available:", str(e))
 
-# Carregar o modelo ResNet18 treinado
 model = models.resnet18()
 num_ftrs = model.fc.in_features
 model.fc = nn.Linear(num_ftrs, len(class_names))
@@ -41,7 +38,6 @@ model.load_state_dict(torch.load('model_resnet18.pth', map_location=device))
 model = model.to(device)
 model.eval()
 
-# Transformações para a imagem
 data_transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
@@ -97,4 +93,4 @@ async def predict_image(file: UploadFile = File(...)):
     })
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8005)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
