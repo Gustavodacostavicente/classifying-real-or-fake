@@ -9,6 +9,17 @@ Este projeto demonstra como detectar imagens falsas usando a Transformada Rápid
 - `main.py`: Script FastAPI para receber imagens, aplicar FFT, e usar o modelo treinado para prever se a imagem é real ou falsa.
 - `Dockerfile`: Arquivo para criar um contêiner Docker para a aplicação.
 
+### Estrutura de Diretórios
+
+<img src="./docs/code.png" alt="Estrutura do Projeto" width="300"/>
+
+### Exemplos de Espectros
+
+- **Imagem Real**:
+  <img src="./docs/real.png" alt="Espectro de Imagem Real" width="300"/>
+
+- **Imagem Falsa**:
+  <img src="./docs/fake.png" alt="Espectro de Imagem Falsa" width="300"/>
 ## Pré-requisitos
 
 - Python 3.11
@@ -149,6 +160,9 @@ Este projeto demonstra como detectar imagens falsas usando a Transformada Rápid
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
 
+## Licença
+
+Este projeto está licenciado sob a [sua licença].
 
 ---
 
