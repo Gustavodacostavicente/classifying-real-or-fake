@@ -11,15 +11,18 @@ Este projeto demonstra como detectar imagens falsas usando a Transformada Rápid
 
 ### Estrutura de Diretórios
 
-<img src="./docs/code.png" alt="Estrutura do Projeto" width="300"/>
+<img src="./docs/code.png" alt="Estrutura do Projeto" width="400"/>
 
 ### Exemplos de Espectros
 
 - **Imagem Real**:
-  <img src="./docs/real.png" alt="Espectro de Imagem Real" width="300"/>
+
+  <img src="./docs/real.png" alt="Espectro de Imagem Real" width="400"/>
 
 - **Imagem Falsa**:
-  <img src="./docs/fake.png" alt="Espectro de Imagem Falsa" width="300"/>
+
+  <img src="./docs/fake.png" alt="Espectro de Imagem Falsa" width="400"/>
+  
 ## Pré-requisitos
 
 - Python 3.11
